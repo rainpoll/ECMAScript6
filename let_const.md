@@ -7,9 +7,8 @@
 		let a=10;
 		var b=1;
 	}
-	console.log(a);// a is not defined.
+	console.log(a);// ReferenceError
 	console.log(b);//1
-
 >`for`循环的计数器：
 
 	var a = [];
@@ -150,25 +149,28 @@
 
 >块级作用域外部，无法调用块级作用域内部定义的函数:
 
-	{
+	
+	{	
 		let a='hello';
-		function f() {
+		function f() 
+		{
 			console.log(a);
 		}
 	}
 	
-	f();//ReferenceError
+	f();//TypeError
 
 	//modyfied here
 	
 	let f;
 	{
 	  let a = 'hello';
-	  f = function () {
+	  f = function () 
+	  {
 	    console.log(a);
 	  }
 	}
-	f() // "hello"
+	f(); // "hello"
 
 ##3、const命令
 >`const`也用来声明变量，但是声明的是常量。一旦声明，常量的值就不能改变。
